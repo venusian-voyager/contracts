@@ -2,8 +2,7 @@
 
 namespace Voyager\Contracts\IOPools;
 
-interface QueuedResourceMail
+interface LoopResource
 {
 
-    
 }

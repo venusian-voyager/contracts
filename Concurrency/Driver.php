@@ -3,17 +3,14 @@
 namespace Voyager\Contracts\Concurrency;
 
 use Closure;
-use Voyager\NutsAndBolts\Defer\DeferredCallback;
 
 interface Driver
 {
     /**
-     * Run the given tasks concurrently and return an array containing the results.
+     * Run the given tasks concurrently and return their results, keyed as the tasks were.
+     *
+     * @param  Closure|array<array-key, Closure>  $tasks
+     * @return array<array-key, mixed>
      */
     public function run(Closure|array $tasks): array;
-
-    /**
-     * Defer the execution of the given tasks.
-     */
-    public function defer(Closure|array $tasks): DeferredCallback;
 }

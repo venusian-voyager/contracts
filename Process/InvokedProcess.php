@@ -63,6 +63,14 @@ interface InvokedProcess
     public function wait(?callable $output = null);
 
     /**
+     * Wait for the process to finish without blocking the loop.
+     *
+     * @param  callable|null  $output  handed the output read from now on, as ($type, $buffer)
+     * @return \Voyager\Contracts\IOPools\Promise  the ProcessResult
+     */
+    public function waitAsync(?callable $output = null): \Voyager\Contracts\IOPools\Promise;
+
+    /**
      * Wait until the given callback returns true.
      *
      * @param  callable|null  $output

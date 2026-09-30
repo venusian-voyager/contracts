@@ -126,4 +126,15 @@ interface TheServiceContainer extends ServiceContainerContract
      */
     public function registerSingleton(callable|string $abstract, callable|string|null $concrete = null): void;
 
+    /**
+     * Register an existing instance as shared in the container.
+     *
+     * @template TInstance of mixed
+     *
+     * @param string $abstract
+     * @param TInstance $instance
+     * @return void
+     * @throws ReflectionException
+     */
+    public function registerInstance(string $abstract, mixed $instance): void;
 }

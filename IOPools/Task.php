@@ -2,7 +2,8 @@
 
 namespace Voyager\Contracts\IOPools;
 
-/** A promise for what an async() body returns, plus the handle to stop waiting for it. */
+use Throwable;
+
 interface Task extends Promise
 {
     /** CancelledException lands at the fiber's suspend point. No-op once finished. */
